@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace project
 {
@@ -17,9 +19,9 @@ namespace project
 			finished.ContinueWith(s =>
 			{
 				// Parse the response
-				var response = JsonConvert.ParseObject(s.Result);
+				var response = JsonConvert.DeserializeObject(s.Result);
 
-				var tails = response.GetObject(code).GetArray("Tails");
+				var tails = response.GetObject(code).GetArray("Tails").Where(t=>t.GetString("Af") == "F" && new[]{"C", "P", "p"}.Contains(t.GetString("Tc"))).ToList();
 
 				using (LockManager.GetLock("database"))
 				{
