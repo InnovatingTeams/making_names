@@ -15,13 +15,19 @@ namespace project
 				_mutex.ReleaseMutex();
 				_mutex.Dispose();
 			}
+
+			public IDisposable Wait()
+			{
+				_mutex.WaitOne();
+				return this;
+			}
 		}
 
 		private static readonly ConcurrentDictionary<string, Lock> Locks = new ConcurrentDictionary<string, Lock>();
 
 		public static IDisposable GetLock(string @lock)
 		{
-			return Locks.GetOrAdd(@lock, _=>new Lock());
+			return Locks.GetOrAdd(@lock, _=>new Lock()).Wait();
 		}
 	}
 }

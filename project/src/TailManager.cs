@@ -1,5 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using System.Xml.XPath;
 using Newtonsoft.Json;
 
 namespace project
@@ -8,20 +12,20 @@ namespace project
 	{
 		public void OnUpdate(string code)
 		{
-			Task<string> finished;
+			Task<WebResponse> finished;
+			var request = HttpWebRequest.Create(new Uri(string.Format("https://rt.faa.gov/{0}/114", code)));
+			request.Credentials = new NetworkCredential("username", "password");
+
 			using (LockManager.GetLock("Network"))
 			{
-				// Prepare to poll service
-
-				// Poll the service
+				finished = Task<WebResponse>.Factory.FromAsync(request.BeginGetResponse, request.EndGetResponse, null);
 			}
 
 			finished.ContinueWith(s =>
 			{
-				// Parse the response
-				var response = JsonConvert.DeserializeObject(s.Result);
+				var response = JsonConvert.DeserializeXNode(new StreamReader(s.Result.GetResponseStream()).ReadToEnd());
 
-				var tails = response.GetObject(code).GetArray("Tails").Where(t=>t.GetString("Af") == "F" && new[]{"C", "P", "p"}.Contains(t.GetString("Tc"))).ToList();
+				var tails = response.XPathSelectElements("Tails").Where(t=>t.Attribute("Af")?.Value == "F" && new[]{"C", "P", "p"}.Contains(t.Attribute("Tc")?.Value)).ToList();
 
 				using (LockManager.GetLock("database"))
 				{
@@ -39,7 +43,7 @@ namespace project
 
 				// Kick off background processing on new tails
 
-				// Notify the UI to redraw itself
+				// Update UI from two sets of tails.
 			});
 		}
 	}
