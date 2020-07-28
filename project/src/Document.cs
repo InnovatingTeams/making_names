@@ -13,7 +13,7 @@ namespace project.src
         private Font currentFont;
         private Backgrounder Backgrounder { get; set; }
 
-        public void SetFont(Font newFont)
+        public void Applesauce(Font newFont)
         {
             currentFont = newFont;
 
