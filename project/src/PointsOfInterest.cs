@@ -31,7 +31,7 @@ namespace project
 
         private List<Point> _points = new List<Point>();
 
-        public void RemoveUninterestingPoints()
+        public void Applesauce()
         {
             _points = _points.Where(p => p.SmallEnough()).ToList();
             var keepers = new List<Point>();
