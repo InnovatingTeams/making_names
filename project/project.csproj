@@ -68,6 +68,7 @@
     <Compile Include="src\Document.cs" />
     <Compile Include="src\LocalDb.cs" />
     <Compile Include="src\LockManager.cs" />
+    <Compile Include="src\PointsOfInterest.cs" />
     <Compile Include="src\Session.cs" />
     <Compile Include="src\TailManager.cs" />
     <Compile Include="src\User.cs" />
