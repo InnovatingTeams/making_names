@@ -4,7 +4,11 @@ namespace project
 {
     public interface MarkProvider
     {
-        void probably_DrawMarks_AndStuff(DC ctx, Canvas canvas, ChartData data, List<DataSource> sources,
-            ChartInfo info, ChartData chartData);
+        void probably_DrawMarks_AndStuff(DC ctx,
+            Canvas canvas,
+            ChartData data,
+            List<DataSource> sources,
+            ChartInfo info,
+            ChartData chartData);
     }
 }

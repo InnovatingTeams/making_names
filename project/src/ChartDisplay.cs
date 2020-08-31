@@ -7,18 +7,25 @@ namespace project
     public class ChartDisplay
     {
         // ReSharper disable once UnusedMember.Global
-        public static void probably_DrawChart_AndNothingMore(DC ctx, Canvas canvas, List<DataSource> providers,
-            List<MarkProvider> markers, ChartInfo info, ChartData data)
+        public static void probably_DrawChart_AndNothingMore(DC ctx,
+            Canvas canvas,
+            List<DataSource> providers,
+            List<MarkProvider> markers,
+            ChartInfo info,
+            ChartData data)
         {
             probably_DrawBackgroundAndLayOutAreas_AndStuffButNotText(ctx, canvas, info);
             probably_AskProvidersForDataContextInfo_AndStuff(ctx, canvas, data, providers);
             probably_DrawAxes_AndStuff(ctx, canvas, data);
-            markers.ForEach(m => m.probably_DrawMarks_AndStuff(ctx, canvas, data, providers, info, data));
+            markers.ForEach(m =>
+                m.probably_DrawMarks_AndStuff(ctx, canvas, data, providers, info, data));
             probably_AddTextForTitlesAndAxisLabels_AndStuff(ctx, canvas, info);
             probably_AddTextForDataLabels_AndStuff(ctx, canvas, data);
         }
 
-        private static void probably_AskProvidersForDataContextInfo_AndStuff(DC ctx, Canvas canvas, ChartData data,
+        private static void probably_AskProvidersForDataContextInfo_AndStuff(DC ctx,
+            Canvas canvas,
+            ChartData data,
             List<DataSource> providers)
         {
             data.AllMetadata = providers.Select(source => source.FetchMetadata(data.Constraints));

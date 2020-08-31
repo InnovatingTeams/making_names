@@ -7,7 +7,10 @@ namespace project
 {
     public class Marker_Legend : MarkProvider
     {
-        public void probably_DrawMarks_AndStuff(DC ctx, Canvas canvas, ChartData data, List<DataSource> sources,
+        public void probably_DrawMarks_AndStuff(DC ctx,
+            Canvas canvas,
+            ChartData data,
+            List<DataSource> sources,
             ChartInfo info,
             ChartData chartData)
         {
@@ -28,7 +31,8 @@ namespace project
             throw new System.NotImplementedException();
         }
 
-        private void DrawLegendEntry(DC ctx, Canvas canvas, string name, DrawingMetrics metrics, DrawingStyleInfo style, DrawingMetrics legendMetrics)
+        private void DrawLegendEntry(DC ctx, Canvas canvas, string name, DrawingMetrics metrics, DrawingStyleInfo style,
+            DrawingMetrics legendMetrics)
         {
             throw new System.NotImplementedException();
         }

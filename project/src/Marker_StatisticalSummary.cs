@@ -8,11 +8,15 @@ namespace project
     {
         private AnalyticalFunction analysis;
 
-        public void probably_DrawMarks_AndStuff(DC ctx, Canvas canvas, ChartData data, List<DataSource> sources, ChartInfo info,
+        public void probably_DrawMarks_AndStuff(DC ctx,
+            Canvas canvas,
+            ChartData data,
+            List<DataSource> sources,
+            ChartInfo info,
             ChartData chartData)
         {
             var partialResults = chartData.AllMetadata
-                .Select(m => 
+                .Select(m =>
                     m.Source.EvaluateWithResults(
                         analysis.PartialComputationFor(m)));
             var finalResult = analysis.ComputeFinalResult(partialResults);
