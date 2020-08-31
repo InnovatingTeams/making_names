@@ -8,7 +8,7 @@ namespace project
     {
         private AnalyticalFunction analysis;
 
-        public void probably_DrawMarks_AndStuff(
+        public void probably_DrawMarks_AndReplaceMarksAndDoDistributedAnalysisAndPotentiallyOtherStuffAcrossAllDataSources(
             DC ctx,
             Canvas canvas,
             ChartData data,

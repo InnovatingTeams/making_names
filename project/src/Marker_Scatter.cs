@@ -6,7 +6,7 @@ namespace project
 {
     public class Marker_Scatter : MarkProvider
     {
-        public void probably_DrawMarks_AndStuff(
+        public void probably_DrawMarks_AndReplaceMarksAndDoDistributedAnalysisAndPotentiallyOtherStuffAcrossAllDataSources(
             DC ctx,
             Canvas canvas,
             ChartData data,

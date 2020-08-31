@@ -19,7 +19,7 @@ namespace project
             probably_AskProvidersForDataContextInfo_AndStuffUsingRestApisAndDatabasesAndOtherDataSources(ctx, canvas, data, providers);
             probably_DrawAxes_AndDirectlyDrawOtherData(ctx, canvas, data);
             markers.ForEach(m =>
-                m.probably_DrawMarks_AndStuff(ctx, canvas, data, providers, info, data));
+                m.probably_DrawMarks_AndReplaceMarksAndDoDistributedAnalysisAndPotentiallyOtherStuffAcrossAllDataSources(ctx, canvas, data, providers, info, data));
             probably_AddTextForTitlesAndAxisLabels_AndDirectlyDrawOtherChartInfo(ctx, canvas, info);
             probably_AddTextForDataLabels_AndDirectlyDrawOtherData(ctx, canvas, data);
         }

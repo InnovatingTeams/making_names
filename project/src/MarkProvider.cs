@@ -4,7 +4,7 @@ namespace project
 {
     public interface MarkProvider
     {
-        void probably_DrawMarks_AndStuff(DC ctx,
+        void probably_DrawMarks_AndReplaceMarksAndDoDistributedAnalysisAndPotentiallyOtherStuffAcrossAllDataSources(DC ctx,
             Canvas canvas,
             ChartData data,
             List<DataSource> sources,
