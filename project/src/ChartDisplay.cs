@@ -16,7 +16,7 @@ namespace project
             ChartData data)
         {
             probably_DrawBackgroundAndLayOutAreas_AndDirectlyDrawOtherChartInfoButNotText(ctx, canvas, info);
-            probably_AskProvidersForDataContextInfo_AndStuff(ctx, canvas, data, providers);
+            probably_AskProvidersForDataContextInfo_AndStuffUsingRestApisAndDatabasesAndOtherDataSources(ctx, canvas, data, providers);
             probably_DrawAxes_AndDirectlyDrawOtherData(ctx, canvas, data);
             markers.ForEach(m =>
                 m.probably_DrawMarks_AndStuff(ctx, canvas, data, providers, info, data));
@@ -24,7 +24,7 @@ namespace project
             probably_AddTextForDataLabels_AndDirectlyDrawOtherData(ctx, canvas, data);
         }
 
-        private static void probably_AskProvidersForDataContextInfo_AndStuff(
+        private static void probably_AskProvidersForDataContextInfo_AndStuffUsingRestApisAndDatabasesAndOtherDataSources(
             DC ctx,
             Canvas canvas,
             ChartData data,
