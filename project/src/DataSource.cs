@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace project
 {
@@ -8,5 +9,6 @@ namespace project
         void DrawNotes(DC ctx, Canvas canvas, IEnumerable<Metadata> metadata);
         void AccountForOtherProviders(IEnumerable<Metadata> metadata);
         IEnumerable<DataItem> FetchData(Filter filterInfo);
+        DataTable EvaluateWithResults(AbstractQuery partialComputationFor);
     }
 }
