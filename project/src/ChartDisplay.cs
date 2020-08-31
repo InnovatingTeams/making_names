@@ -7,7 +7,8 @@ namespace project
     public class ChartDisplay
     {
         // ReSharper disable once UnusedMember.Global
-        public static void probably_DrawChart_AndNothingMore(DC ctx,
+        public static void probably_DrawChart_AndNothingMore(
+            DC ctx,
             Canvas canvas,
             List<DataSource> providers,
             List<MarkProvider> markers,
@@ -23,7 +24,8 @@ namespace project
             probably_AddTextForDataLabels_AndStuff(ctx, canvas, data);
         }
 
-        private static void probably_AskProvidersForDataContextInfo_AndStuff(DC ctx,
+        private static void probably_AskProvidersForDataContextInfo_AndStuff(
+            DC ctx,
             Canvas canvas,
             ChartData data,
             List<DataSource> providers)

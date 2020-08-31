@@ -7,7 +7,8 @@ namespace project
 {
     public class Marker_Legend : MarkProvider
     {
-        public void probably_DrawMarks_AndStuff(DC ctx,
+        public void probably_DrawMarks_AndStuff(
+            DC ctx,
             Canvas canvas,
             ChartData data,
             List<DataSource> sources,
