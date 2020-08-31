@@ -4,7 +4,7 @@ using ApprovalUtilities.Utilities;
 
 namespace project
 {
-    public class ScatterMarker : MarkProvider
+    public class Marker_Scatter : MarkProvider
     {
         public void probably_DrawMarks_AndStuff(DC ctx,
             Canvas canvas,

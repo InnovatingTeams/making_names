@@ -75,14 +75,15 @@
     <Compile Include="src\DataSource_OData.cs" />
     <Compile Include="src\DataSource_SqlServer.cs" />
     <Compile Include="src\Filter.cs" />
+    <Compile Include="src\Marker_Legend.cs" />
     <Compile Include="src\Metadata.cs" />
     <Compile Include="src\DataSource.cs" />
     <Compile Include="src\DC.cs" />
     <Compile Include="src\LockManager.cs" />
     <Compile Include="src\MarkProvider.cs" />
     <Compile Include="src\ModelConstraints.cs" />
-    <Compile Include="src\ScatterMarker.cs" />
-    <Compile Include="src\StatisticalSummaryMarker.cs" />
+    <Compile Include="src\Marker_Scatter.cs" />
+    <Compile Include="src\Marker_StatisticalSummary.cs" />
     <Compile Include="src\TailManager.cs" />
   </ItemGroup>
   <ItemGroup>

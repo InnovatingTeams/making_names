@@ -4,7 +4,7 @@ using ApprovalUtilities.Utilities;
 
 namespace project
 {
-    public class StatisticalSummaryMarker : MarkProvider
+    public class Marker_StatisticalSummary : MarkProvider
     {
         private AnalyticalFunction analysis;
 
