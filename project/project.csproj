@@ -60,9 +60,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="spec\TestsAreWorking.cs" />
+    <Compile Include="src\Canvas.cs" />
+    <Compile Include="src\ChartData.cs" />
+    <Compile Include="src\ChartDisplay.cs" />
+    <Compile Include="src\ChartInfo.cs" />
     <Compile Include="src\database\SQLite.cs" />
     <Compile Include="src\database\SQLiteAsync.cs" />
+    <Compile Include="src\DataItem.cs" />
+    <Compile Include="src\DataSource.cs" />
+    <Compile Include="src\DC.cs" />
     <Compile Include="src\LockManager.cs" />
+    <Compile Include="src\MarkProvider.cs" />
+    <Compile Include="src\ModelConstraints.cs" />
     <Compile Include="src\TailManager.cs" />
   </ItemGroup>
   <ItemGroup>
