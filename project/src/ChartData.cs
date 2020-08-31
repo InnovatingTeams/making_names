@@ -5,10 +5,10 @@ namespace project
 {
     public class ChartData
     {
-        private List<DataItem> _data = new List<DataItem>();
+        private List<Metadata> _data = new List<Metadata>();
         public ModelConstraints Constraints { get; }
 
-        public IEnumerable<DataItem> CachedDataPoints
+        public IEnumerable<Metadata> AllMetadata
         {
             get => _data;
             set => _data = value.ToList();

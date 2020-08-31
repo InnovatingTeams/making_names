@@ -11,18 +11,19 @@ namespace project
             List<MarkProvider> markers, ChartInfo info, ChartData data)
         {
             probably_DrawBackgroundAndLayOutAreas_AndStuffButNotText(ctx, canvas, info);
-            probably_LetProvidersModifyDataPoints_AndStuff(ctx, canvas, data, providers);
+            probably_AskProvidersForDataContextInfo_AndStuff(ctx, canvas, data, providers);
             probably_DrawAxes_AndStuff(ctx, canvas, data);
             markers.ForEach(m => m.probably_DrawMarks_AndStuff(ctx, canvas, data, providers, info, data));
             probably_AddTextForTitlesAndAxisLabels_AndStuff(ctx, canvas, info);
             probably_AddTextForDataLabels_AndStuff(ctx, canvas, data);
         }
 
-        private static void probably_LetProvidersModifyDataPoints_AndStuff(DC ctx, Canvas canvas, ChartData data,
+        private static void probably_AskProvidersForDataContextInfo_AndStuff(DC ctx, Canvas canvas, ChartData data,
             List<DataSource> providers)
         {
-            data.CachedDataPoints = providers.SelectMany(p => p.FetchBasicData(data.Constraints));
-            providers.ForEach(p => p.DrawNotes(ctx, canvas, data.CachedDataPoints));
+            data.AllMetadata = providers.Select(source => source.FetchMetadata(data.Constraints));
+            providers.ForEach(p => p.AccountForOtherProviders(data.AllMetadata));
+            providers.ForEach(p => p.DrawNotes(ctx, canvas, data.AllMetadata));
         }
 
         private static void probably_AddTextForDataLabels_AndStuff(DC ctx, Canvas canvas, ChartData data)

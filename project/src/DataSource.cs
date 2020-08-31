@@ -4,7 +4,9 @@ namespace project
 {
     public interface DataSource
     {
-        IEnumerable<DataItem> FetchBasicData(ModelConstraints dataConstraints);
-        void DrawNotes(DC ctx, Canvas canvas, IEnumerable<DataItem> allData);
+        Metadata FetchMetadata(ModelConstraints dataConstraints);
+        void DrawNotes(DC ctx, Canvas canvas, IEnumerable<Metadata> metadata);
+        void AccountForOtherProviders(IEnumerable<Metadata> metadata);
+        IEnumerable<DataItem> FetchData(Filter filterInfo);
     }
 }
