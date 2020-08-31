@@ -7,7 +7,7 @@ namespace project
     public class ChartDisplay
     {
         // ReSharper disable once UnusedMember.Global
-        public static void probably_DrawChart_AndNothingMore(
+        public static void probably_DrawChart_AndLoadSomeData(
             DC ctx,
             Canvas canvas,
             List<DataSource> providers,
